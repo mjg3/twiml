@@ -11,7 +11,7 @@ client = Client(account_sid, auth_token)
 call = client.calls.create(
     to="+19737382206",
     from_="+18026130730",
-    url="/"
+    url="https://twiml-xml.herokuapp.com/index.xml"
 )
 
 print(call.sid)
