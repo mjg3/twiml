@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Gather input="speech dtmf" action="/" timeout="3" numDigits="1">
+  <Gather input="speech dtmf" action="http://127.0.0.1:5000/handle_data" method="POST" timeout="3" numDigits="1">
      <Say>Please press 1 or say sales for sales.</Say>
   </Gather>
 </Response>
