@@ -24,10 +24,22 @@ def main():
     )
 
     return "Main"
-    
+
 @app.route('/handle_data', methods=['GET', 'POST'])
 def handle_data():
+    print "Handle Data"
     return "Handle Data"
+    resp = VoiceResponse()
+
+    # Start our <Gather> verb
+    gather = Gather(num_digits=1)
+    gather.say('For sales, press 1. For support, press 2.')
+    resp.append(gather)
+
+    # If the user doesn't select an option, redirect them into a loop
+    resp.redirect('/voice')
+
+    return str(resp)
     # response = VoiceResponse()
     # gather = Gather(input='speech dtmf', timeout=3, num_digits=1)
     # gather.say('Please press 1 or say sales for sales.')
