@@ -10,6 +10,10 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
+    content = get_file('index.xml')
+
+
+@app.route('/make_call', methods=['GET', 'POST'])    
     account_sid = "AC17aff2a74960a87c99ce7037342c1982"
     # Your Auth Token from twilio.com/console
     auth_token  = "2900ed6c5c3dff153f90fee834d37a82"
@@ -28,16 +32,16 @@ def main():
 @app.route('/handle_data', methods=['GET', 'POST'])
 def handle_data():
     print "Handle Data"
-    return "Handle Data"
-    resp = VoiceResponse()
+    # return "Handle Data"
+    # resp = VoiceResponse()
 
     # Start our <Gather> verb
-    gather = Gather(num_digits=1)
-    gather.say('For sales, press 1. For support, press 2.')
-    resp.append(gather)
+    # gather = Gather(num_digits=1)
+    # gather.say('For sales, press 1. For support, press 2.')
+    # resp.append(gather)
 
     # If the user doesn't select an option, redirect them into a loop
-    resp.redirect('/voice')
+    # resp.redirect('/voice')
 
     return str(resp)
     # response = VoiceResponse()
