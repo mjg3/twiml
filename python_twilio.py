@@ -1,5 +1,5 @@
 from twilio.rest import Client
-
+from twilio.twiml.voice_response import Gather, VoiceResponse, Say
 
 # Your Account SID from twilio.com/console
 account_sid = "AC17aff2a74960a87c99ce7037342c1982"
@@ -14,4 +14,6 @@ call = client.calls.create(
     url="https://twiml-xml.herokuapp.com/index.xml"
 )
 
-print(call.sid)
+
+gather = Gather(input='speech dtmf', timeout=3, num_digits=1)
+print(response)
