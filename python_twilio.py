@@ -1,6 +1,9 @@
 from twilio.rest import Client
 from twilio.twiml.voice_response import Gather, VoiceResponse, Say
 
+from flask import Flask
+
+
 # Your Account SID from twilio.com/console
 account_sid = "AC17aff2a74960a87c99ce7037342c1982"
 # Your Auth Token from twilio.com/console
@@ -14,9 +17,12 @@ call = client.calls.create(
     url="https://twiml-xml.herokuapp.com/index.xml"
 )
 
-response = VoiceResponse()
-gather = Gather(input='speech dtmf', timeout=3, num_digits=1)
-gather.say('Please press 1 or say sales for sales.')
-response.append(gather)
 
-print(response)
+@app.route('/collect')
+print ("COLLECT")
+# response = VoiceResponse()
+# gather = Gather(input='speech dtmf', timeout=3, num_digits=1)
+# gather.say('Please press 1 or say sales for sales.')
+# response.append(gather)
+#
+# print(response)
