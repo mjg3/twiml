@@ -1,0 +1,1 @@
+web: gunicorn cottageMeal:app --log-file=-
