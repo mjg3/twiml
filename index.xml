@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
   <Gather input="speech dtmf" timeout="3" numDigits="1">
-      <Say>Hi we're calling on behalf of the Vermont State Lottery.
-        We're interested to hear if you have the following scratch tickets
-        in stock. 123,456 Spectecular?</Say>
+     <Say>Please press 1 or say sales for sales.</Say>
   </Gather>
 </Response>
